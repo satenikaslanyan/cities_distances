@@ -53,15 +53,15 @@ void Graph::add_edge(std::string s1, std::string s2, int dist)
 
 void Graph::print_path(std::string s1, std::string s2)
 {
-    for (std::vector<Edge>::iterator it = edges.begin(); it < edges.end(); ++it) {
-        if ((*it).get_first_city() == s1 && (*it).get_second_city() == s2) {
-            std::cout << "Distance from " <<  (*it).get_first_city() << " to " << 
-                (*it).get_second_city() << " - " << 
-                (*it).get_distance() << std::endl;
-        } else if ((*it).get_second_city() == s1 && (*it).get_first_city() == s2) {
-             std::cout << "Distance from " <<  (*it).get_second_city() << " to " <<
-                (*it).get_first_city() << " - " <<
-                (*it).get_distance() << std::endl;
+    for (auto i : edges) {
+        if (i.get_first_city() == s1 && i.get_second_city() == s2) {
+            std::cout << "Distance from " <<  i.get_first_city() << " to " << 
+                i.get_second_city() << " - " << 
+                i.get_distance() << std::endl;
+        } else if (i.get_second_city() == s1 && i.get_first_city() == s2) {
+            std::cout << "Distance from " <<  i.get_second_city() << " to " <<
+                i.get_first_city() << " - " <<
+                i.get_distance() << std::endl;
         }
     }
 }
